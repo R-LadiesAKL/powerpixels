@@ -1,1 +1,1 @@
-# power_of_pixels
+# powerpixels
