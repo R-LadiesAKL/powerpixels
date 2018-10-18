@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Code examples</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style-all.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 66px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+
+.section h2 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h3 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h4 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h5 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h6 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img id='logo' style='width: 40px; float:left; margin-right:10px' src='rladies.gif' /> The power of pixels <br /><span class='special'>Using R to explore and exploit features of images</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="live.html">Live code</a>
+</li>
+<li>
+  <a href="draw.html">Drawing tool</a>
+</li>
+<li>
+  <a href="code.html">Code examples</a>
+</li>
+<li>
+  <a href="links.html">Useful links</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Code examples</h1>
+
+</div>
+
+
+<p>Here are some code examples used in the workshop activities, for reference when needed :-)</p>
+<p>Examples assume the following packages have been loaded:<br />
+– <code>magick</code><br />
+– <code>gganimate</code> (from github)<br />
+– <code>ggimage</code><br />
+– <code>nullabor</code><br />
+– <code>tidyverse</code></p>
+<div id="section" class="section level2 tabset">
+<h2></h2>
+<div id="getting-images-into-r" class="section level3">
+<h3>Getting images into R</h3>
+<p>We’ll use the R package <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html"><code>magick</code></a> to read images into R and do some exploration and manipulation of the image data. This example uses images from the CC0 image site <a href="https://www.pexels.com/">pexels.com</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(magick)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># read an image</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">imageURL &lt;-<span class="st"> &quot;https://images.pexels.com/photos/21492/pexels-photo.jpg&quot;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">image_read</span>(imageURL)</a></code></pre></div>
+<p><img src="code_files/figure-html/images-to-R-1.png" width="2592" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># scale it down to reduce the pixels</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">image_small &lt;-<span class="st"> </span><span class="kw">image_read</span>(imageURL) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw">image_scale</span>(<span class="st">&quot;10&quot;</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co"># and blow it up to see those pixels</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">image_small <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="st">  </span><span class="kw">image_scale</span>(<span class="st">&quot;200&quot;</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/images-to-R-2.png" width="100" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># get data about the image</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">img_data &lt;-<span class="st"> </span>image_small <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">image_data</span>()</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co"># and show the matrix just for the red component (in hex)</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">img_matrix &lt;-<span class="st"> </span><span class="kw">t</span>(img_data[<span class="dv">1</span>,,])</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">img_matrix</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+## [1,]   78   85   51   31   50   79   39   a9   53    73
+## [2,]   69   a4   6f   88   ea   eb   95   ae   77    d5
+## [3,]   2c   79   e1   81   93   82   85   93   5c    24
+## [4,]   26   40   8f   6c   7f   8f   9b   bc   79    2a
+## [5,]   12   15   21   40   5e   6a   86   dc   a2    27
+## [6,]   0c   0e   12   20   33   42   4c   87   6b    1e
+## [7,]   06   07   0c   13   1d   2b   2a   45   37    11</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># reduce the image down to just one colour and display</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">image_small <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw">image_scale</span>(<span class="st">&quot;200&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">image_quantize</span>(<span class="dt">max=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/images-to-R-3.png" width="100" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># convert the image to grayscale and save the image data</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">gs_data &lt;-<span class="st"> </span>image_small <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw">image_quantize</span>(<span class="dt">colorspace =</span> <span class="st">&quot;gray&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="kw">image_data</span>()</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co"># and show the matrix just for the red component (in hex)</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">gs_matrix &lt;-<span class="st"> </span><span class="kw">t</span>(gs_data[<span class="dv">1</span>,,])</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">gs_matrix</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+## [1,]   58   66   44   33   32   81   3c   90   47    78
+## [2,]   52   81   60   88   bb   d6   84   c0   7c    d8
+## [3,]   21   5d   e0   7b   94   82   8a   a2   63    28
+## [4,]   1d   32   8e   42   41   79   97   b6   70    28
+## [5,]   11   12   1c   20   26   40   68   bd   86    24
+## [6,]   0c   0d   10   15   1b   29   37   6a   53    1b
+## [7,]   06   07   0b   0f   13   1c   1e   34   2a    0f</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># create one long vector of all the pixels with the red component</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co"># because it&#39;s grayscale, red = green = blue</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">gs_vector &lt;-<span class="st"> </span><span class="kw">as.vector</span>(gs_data[<span class="dv">1</span>,,])</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">gs_vector</a></code></pre></div>
+<pre><code>##  [1] 58 66 44 33 32 81 3c 90 47 78 52 81 60 88 bb d6 84 c0 7c d8 21 5d e0
+## [24] 7b 94 82 8a a2 63 28 1d 32 8e 42 41 79 97 b6 70 28 11 12 1c 20 26 40
+## [47] 68 bd 86 24 0c 0d 10 15 1b 29 37 6a 53 1b 06 07 0b 0f 13 1c 1e 34 2a
+## [70] 0f</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># create a dataframe of the pixels converted to rgb (red component)</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">gs_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">gs =</span> <span class="kw">as.numeric</span>(gs_vector), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">gs_df</a></code></pre></div>
+<pre><code>##     gs
+## 1   88
+## 2  102
+## 3   68
+## 4   51
+## 5   50
+## 6  129
+## 7   60
+## 8  144
+## 9   71
+## 10 120
+## 11  82
+## 12 129
+## 13  96
+## 14 136
+## 15 187
+## 16 214
+## 17 132
+## 18 192
+## 19 124
+## 20 216
+## 21  33
+## 22  93
+## 23 224
+## 24 123
+## 25 148
+## 26 130
+## 27 138
+## 28 162
+## 29  99
+## 30  40
+## 31  29
+## 32  50
+## 33 142
+## 34  66
+## 35  65
+## 36 121
+## 37 151
+## 38 182
+## 39 112
+## 40  40
+## 41  17
+## 42  18
+## 43  28
+## 44  32
+## 45  38
+## 46  64
+## 47 104
+## 48 189
+## 49 134
+## 50  36
+## 51  12
+## 52  13
+## 53  16
+## 54  21
+## 55  27
+## 56  41
+## 57  55
+## 58 106
+## 59  83
+## 60  27
+## 61   6
+## 62   7
+## 63  11
+## 64  15
+## 65  19
+## 66  28
+## 67  30
+## 68  52
+## 69  42
+## 70  15</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># reduce the grayscale image down to just one colour and display</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">gs_one &lt;-<span class="st"> </span>image_small <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw">image_scale</span>(<span class="st">&quot;200&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw">image_quantize</span>(<span class="dt">colorspace =</span> <span class="st">&quot;gray&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw">image_quantize</span>(<span class="dt">max=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co"># get the red component value</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">rgb_colour &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">as.numeric</span>(<span class="kw">image_data</span>(gs_one)[<span class="dv">1</span>,,][<span class="dv">1</span>,<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="co"># take the one colour grayscale image</span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co"># and display the red component value on top</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">gs_one <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="st">  </span><span class="kw">image_annotate</span>(rgb_colour, <span class="dt">size=</span><span class="dv">30</span>,<span class="dt">location=</span><span class="st">&quot;+75+50&quot;</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/images-to-R-4.png" width="100" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># let&#39;s explore the photos from the match up activity</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="co"># read them once since they are BIG files</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">cute_cats &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg&quot;</span>,<span class="st">&quot;https://images.pexels.com/photos/1084425/pexels-photo-1084425.jpeg&quot;</span>,<span class="st">&quot;https://images.pexels.com/photos/1049764/pexels-photo-1049764.jpeg&quot;</span>,<span class="st">&quot;https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg&quot;</span>,<span class="st">&quot;https://images.pexels.com/photos/315582/pexels-photo-315582.jpeg&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw">image_read</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="st">  </span><span class="kw">image_scale</span>(<span class="st">&quot;200&quot;</span>)</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co"># which was cat 1?</span></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">cute_cats[<span class="dv">1</span>]</a></code></pre></div>
+<p><img src="code_files/figure-html/images-to-R-5.png" width="100" /></p>
+</div>
+<div id="plots-images" class="section level3">
+<h3>plots + images</h3>
+<p>We’ll add the use of R packages from the <a href=""><code>tidyverse</code></a>, specifically <code>readr</code>, <code>dplyr</code> and <code>ggplot2</code>, as well as the packages <code>ggimage</code> to visualise data about movies with robot in their title using our own robot icons and <code>gganimate</code> to liven things up.</p>
+<p>First, use the <a href="draw.html">drawing tool</a> to create your own robot icon and copy the URL link to your image. You’ll need to change this link in the code below :-)</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">library</span>(magick)</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="kw">library</span>(ggimage)</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="kw">library</span>(gganimate)</a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co"># view your image in R</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="kw">image_read</span>(<span class="st">&quot;https://drive.google.com/uc?export=download&amp;id=1muwNrReMtBJIOZaXKlN_hVGFe-shhi0e&quot;</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/plots-plus-images-1.png" width="8" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># save it!</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">image_read</span>(<span class="st">&quot;https://drive.google.com/uc?export=download&amp;id=1muwNrReMtBJIOZaXKlN_hVGFe-shhi0e&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw">image_write</span>(<span class="st">&quot;myrobot.png&quot;</span>)</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co"># read in robot data</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6">robot_df &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vTAvomBmRHCu6T3Mewu3yuEHy8eViekI2WXJTOLDxDrldXc-gYEE2LjiWa1CTgXmXRRJFqf5leNn4NW/pub?gid=0&amp;single=true&amp;output=csv&quot;</span>)</a>
+<a class="sourceLine" id="cb15-7" data-line-number="7">robot_df</a></code></pre></div>
+<pre><code>## # A tibble: 283 x 4
+##    Title                                       Year imdbID    Type 
+##    &lt;chr&gt;                                      &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;
+##  1 I, Robot                                    2004 tt0343818 movie
+##  2 Robot &amp; Frank                               2012 tt1990314 movie
+##  3 Robot Chicken: Star Wars                    2007 tt1020990 movie
+##  4 Robot Overlords                             2014 tt2145829 movie
+##  5 Robot Jox                                   1989 tt0102800 movie
+##  6 Robot Monster                               1953 tt0046248 movie
+##  7 Robot Chicken: Star Wars Episode II         2008 tt1334272 movie
+##  8 Robot Chicken: Star Wars III                2010 tt1691338 movie
+##  9 The Aztec Mummy Against the Humanoid Robot  1958 tt0050717 movie
+## 10 Robot Chicken: DC Comics Special            2012 tt2381287 movie
+## # ... with 273 more rows</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># group data by year and count movies</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">movies &lt;-<span class="st"> </span>robot_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_movies =</span> <span class="kw">n</span>())</a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">movies</a></code></pre></div>
+<pre><code>## # A tibble: 55 x 2
+##     Year num_movies
+##    &lt;int&gt;      &lt;int&gt;
+##  1  1932          1
+##  2  1936          1
+##  3  1938          1
+##  4  1941          1
+##  5  1944          1
+##  6  1951          1
+##  7  1953          2
+##  8  1956          2
+##  9  1958          1
+## 10  1962          2
+## # ... with 45 more rows</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co"># making a boring plot with robots</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">movies <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>num_movies)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="code_files/figure-html/plots-plus-images-3.png" width="672" /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># replace points with robot</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">movies <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>num_movies)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_image</span>(<span class="kw">aes</span>(<span class="dt">image =</span> <span class="st">&quot;myrobot.png&quot;</span>), <span class="dt">size=</span><span class="fl">0.05</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/plots-plus-images-4.png" width="672" /></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co"># make the robot fly</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">movies <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>num_movies)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_image</span>(<span class="kw">aes</span>(<span class="dt">image =</span> <span class="st">&quot;myrobot.png&quot;</span>), <span class="dt">size=</span><span class="fl">0.05</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="st">  </span><span class="kw">transition_time</span>(Year)</a></code></pre></div>
+<p><img src="code_files/figure-html/plots-plus-images-1.gif" /><!-- --></p>
+</div>
+<div id="clustering-images" class="section level3">
+<h3>clustering images</h3>
+<p>We’ll read in a random sample of 225 drawings of ducks from the <a href="https://github.com/googlecreativelab/quickdraw-datase">Google Quick! Draw! dataset</a> and see if we can group them into similar drawings using k-means clustering.</p>
+<p>Download the duck images as a ZIP folder <a href="https://statistics-is-awesome.org/ducks.zip">from here</a> and save them into a folder within your project folder called “ducks”.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">library</span>(magick)</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="kw">library</span>(ggimage)</a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="co"># read the duck images in</span></a>
+<a class="sourceLine" id="cb22-6" data-line-number="6"><span class="co"># from the project folder ducks</span></a>
+<a class="sourceLine" id="cb22-7" data-line-number="7"><span class="co"># and layout drawings in grid</span></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8">folder &lt;-<span class="st"> &quot;ducks/&quot;</span></a>
+<a class="sourceLine" id="cb22-9" data-line-number="9">ducks_df &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path=</span>folder) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb22-10" data-line-number="10"><span class="st">  </span><span class="kw">paste0</span>(folder,.) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb22-11" data-line-number="11"><span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">imageLoc =</span> ., </a>
+<a class="sourceLine" id="cb22-12" data-line-number="12">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb22-13" data-line-number="13"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">x =</span> (<span class="kw">row_number</span>() <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%%</span><span class="st"> </span><span class="kw">ceiling</span>(<span class="kw">sqrt</span>(<span class="kw">n</span>())) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb22-14" data-line-number="14">         <span class="dt">y =</span> <span class="kw">ceiling</span>(<span class="kw">row_number</span>() <span class="op">/</span><span class="st"> </span><span class="kw">ceiling</span>(<span class="kw">sqrt</span>(<span class="kw">n</span>()))))</a>
+<a class="sourceLine" id="cb22-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb22-16" data-line-number="16"><span class="kw">ggplot</span>(ducks_df, <span class="kw">aes</span>(x, y)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-17" data-line-number="17"><span class="st">  </span><span class="kw">geom_image</span>(<span class="kw">aes</span>(<span class="dt">image=</span>imageLoc)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb22-18" data-line-number="18"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">ceiling</span>(<span class="kw">sqrt</span>(<span class="kw">nrow</span>(ducks_df))) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-19" data-line-number="19"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">ceiling</span>(<span class="kw">sqrt</span>(<span class="kw">nrow</span>(ducks_df))) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-20" data-line-number="20"><span class="st">  </span><span class="kw">theme_void</span>()  <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-21" data-line-number="21"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span><span class="dv">1</span>) </a></code></pre></div>
+<p><img src="code_files/figure-html/cluster-images-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="co"># ggsave(&quot;drawinggrid.png&quot;)</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="co"># function to read image data for each duck</span></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="co"># as one row of 100 variables (one for each pixel)</span></a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">convert_data &lt;-<span class="st"> </span><span class="cf">function</span>(x)</a>
+<a class="sourceLine" id="cb23-6" data-line-number="6">{</a>
+<a class="sourceLine" id="cb23-7" data-line-number="7">  pic &lt;-<span class="st"> </span><span class="kw">image_read</span>(x) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="st">    </span><span class="kw">image_scale</span>(<span class="st">&quot;10x10&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-9" data-line-number="9"><span class="st">    </span><span class="kw">image_background</span>(<span class="st">&quot;white&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># need this as transparent background</span></a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="st">    </span><span class="kw">image_convert</span>(<span class="dt">type =</span> <span class="st">&#39;Bilevel&#39;</span>)</a>
+<a class="sourceLine" id="cb23-11" data-line-number="11">    </a>
+<a class="sourceLine" id="cb23-12" data-line-number="12">  <span class="kw">t</span>(<span class="kw">as.numeric</span>(<span class="kw">as.vector</span>(<span class="kw">image_data</span>(pic)[<span class="dv">1</span>,,]))) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-13" data-line-number="13"><span class="st">    </span><span class="kw">data.frame</span>(<span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb23-14" data-line-number="14">}</a>
+<a class="sourceLine" id="cb23-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb23-16" data-line-number="16"><span class="co"># take ducks_df imgLoc and map to convert_data function</span></a>
+<a class="sourceLine" id="cb23-17" data-line-number="17"><span class="co"># store in image_data df</span></a>
+<a class="sourceLine" id="cb23-18" data-line-number="18">image_data &lt;-<span class="st"> </span>ducks_df<span class="op">$</span>imageLoc <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-19" data-line-number="19"><span class="st">  </span><span class="kw">map_df</span>(convert_data)</a>
+<a class="sourceLine" id="cb23-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb23-21" data-line-number="21"><span class="co"># cluster time!</span></a>
+<a class="sourceLine" id="cb23-22" data-line-number="22"><span class="kw">set.seed</span>(<span class="dv">1810</span>)</a>
+<a class="sourceLine" id="cb23-23" data-line-number="23">num_clust &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb23-24" data-line-number="24">images_km &lt;-<span class="st"> </span><span class="kw">kmeans</span>(image_data, <span class="dt">centers =</span> num_clust) </a>
+<a class="sourceLine" id="cb23-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb23-26" data-line-number="26"><span class="co"># check fit numerically</span></a>
+<a class="sourceLine" id="cb23-27" data-line-number="27">images_km<span class="op">$</span>tot.withinss<span class="op">/</span>images_km<span class="op">$</span>totss</a></code></pre></div>
+<pre><code>## [1] 0.9224833</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># add cluster info</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">ducks_df<span class="op">$</span>cluster &lt;-<span class="st"> </span><span class="kw">as.factor</span>(images_km<span class="op">$</span>cluster)</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co"># plot with colour overlay for each cluster</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="kw">ggplot</span>(ducks_df, <span class="kw">aes</span>(x, y)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_image</span>(<span class="kw">aes</span>(<span class="dt">image=</span>imageLoc)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>cluster), <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">ceiling</span>(<span class="kw">sqrt</span>(<span class="kw">nrow</span>(ducks_df))) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">ceiling</span>(<span class="kw">sqrt</span>(<span class="kw">nrow</span>(ducks_df))) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_void</span>()  <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-11" data-line-number="11"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span><span class="dv">1</span>) </a></code></pre></div>
+<p><img src="code_files/figure-html/cluster-images-2.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># overlay ducks from the same cluster</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">duck_clusters &lt;-<span class="st"> </span>ducks_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">x =</span> <span class="kw">as.numeric</span>(cluster),</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">         <span class="dt">y =</span> <span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="co"># plot clusters - check fit visually</span></a>
+<a class="sourceLine" id="cb26-7" data-line-number="7"><span class="kw">ggplot</span>(duck_clusters, <span class="kw">aes</span>(x, y)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_image</span>(<span class="kw">aes</span>(<span class="dt">image=</span>imageLoc), </a>
+<a class="sourceLine" id="cb26-9" data-line-number="9">             <span class="dt">alpha =</span> <span class="fl">0.05</span>, <span class="dt">size=</span><span class="dv">1</span><span class="op">/</span>(num_clust <span class="op">+</span><span class="st"> </span><span class="dv">2</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb26-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, num_clust <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))  <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-12" data-line-number="12"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
+<p><img src="code_files/figure-html/cluster-images-3.png" width="672" /></p>
+</div>
+<div id="pixelated-animation" class="section level3">
+<h3>pixelated animation</h3>
+<p>We’ll create images with text from scratch, take each pixel from an image and plot them individually, and then created some animated word text fun times!</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">library</span>(magick)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="kw">library</span>(gganimate)</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co"># set up image size</span></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6">image_width =<span class="st"> </span><span class="dv">400</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">image_height =<span class="st"> </span><span class="dv">120</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb27-9" data-line-number="9"><span class="co"># create a image with the text</span></a>
+<a class="sourceLine" id="cb27-10" data-line-number="10">word &lt;-<span class="st"> </span><span class="kw">image_blank</span>(<span class="dt">width =</span> image_width, </a>
+<a class="sourceLine" id="cb27-11" data-line-number="11">                    <span class="dt">height =</span> image_height) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="st">  </span><span class="kw">image_background</span>(<span class="st">&quot;#D3D3D3&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="st">  </span><span class="kw">image_annotate</span>(<span class="st">&quot;pixelated&quot;</span>, </a>
+<a class="sourceLine" id="cb27-14" data-line-number="14">                 <span class="dt">color =</span> <span class="st">&quot;#181818&quot;</span>, </a>
+<a class="sourceLine" id="cb27-15" data-line-number="15">                 <span class="dt">size =</span> <span class="dv">60</span>, </a>
+<a class="sourceLine" id="cb27-16" data-line-number="16">                 <span class="dt">location =</span> <span class="st">&quot;+85+1&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="st">  </span><span class="kw">image_annotate</span>(<span class="st">&quot;animation&quot;</span>, </a>
+<a class="sourceLine" id="cb27-18" data-line-number="18">                 <span class="dt">color =</span> <span class="st">&quot;#181818&quot;</span>, </a>
+<a class="sourceLine" id="cb27-19" data-line-number="19">                 <span class="dt">size =</span> <span class="dv">60</span>, </a>
+<a class="sourceLine" id="cb27-20" data-line-number="20">                 <span class="dt">location =</span> <span class="st">&quot;+80+48&quot;</span>)</a>
+<a class="sourceLine" id="cb27-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb27-22" data-line-number="22"><span class="co"># create a dataframe with co-ordinates for each pixel</span></a>
+<a class="sourceLine" id="cb27-23" data-line-number="23">words_df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span>image_width, </a>
+<a class="sourceLine" id="cb27-24" data-line-number="24">                         <span class="dt">y=</span><span class="dv">1</span><span class="op">:</span>image_height)</a>
+<a class="sourceLine" id="cb27-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb27-26" data-line-number="26"><span class="co"># get the hex value by combining r, g, b</span></a>
+<a class="sourceLine" id="cb27-27" data-line-number="27">word_colours_hex &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;#&quot;</span>, </a>
+<a class="sourceLine" id="cb27-28" data-line-number="28">                           <span class="kw">image_data</span>(word)[<span class="dv">1</span>,,], </a>
+<a class="sourceLine" id="cb27-29" data-line-number="29">                           <span class="kw">image_data</span>(word)[<span class="dv">2</span>,,],</a>
+<a class="sourceLine" id="cb27-30" data-line-number="30">                           <span class="kw">image_data</span>(word)[<span class="dv">3</span>,,])</a>
+<a class="sourceLine" id="cb27-31" data-line-number="31"></a>
+<a class="sourceLine" id="cb27-32" data-line-number="32"><span class="co"># add hex to dataframe</span></a>
+<a class="sourceLine" id="cb27-33" data-line-number="33">words_df<span class="op">$</span>hex &lt;-<span class="st"> </span>word_colours_hex</a>
+<a class="sourceLine" id="cb27-34" data-line-number="34"></a>
+<a class="sourceLine" id="cb27-35" data-line-number="35"><span class="co"># plot the pixels as tiles with colour</span></a>
+<a class="sourceLine" id="cb27-36" data-line-number="36">words_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-37" data-line-number="37"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-38" data-line-number="38"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(x, y, <span class="dt">fill=</span>hex)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-39" data-line-number="39"><span class="st">  </span><span class="kw">scale_fill_identity</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-40" data-line-number="40"><span class="st">  </span><span class="kw">scale_y_reverse</span>(<span class="dt">limits=</span><span class="kw">c</span>(image_height<span class="op">+</span><span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-41" data-line-number="41"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-42" data-line-number="42"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span>image_height<span class="op">/</span>image_width)</a></code></pre></div>
+<p><img src="code_files/figure-html/pixelated-animation-1.png" width="672" /></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co"># pixelate just the text </span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">pixel_size =<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">pixels_df &lt;-<span class="st"> </span>words_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(hex<span class="op">==</span><span class="st">&quot;#181818&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">x =</span> <span class="kw">ceiling</span>(x<span class="op">/</span>pixel_size)<span class="op">*</span>pixel_size, </a>
+<a class="sourceLine" id="cb28-6" data-line-number="6">         <span class="dt">y =</span> <span class="kw">ceiling</span>(y<span class="op">/</span>pixel_size)<span class="op">*</span>pixel_size) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-7" data-line-number="7"><span class="st">  </span><span class="kw">distinct</span>()</a>
+<a class="sourceLine" id="cb28-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb28-9" data-line-number="9"><span class="co"># plot the text pixels on top of the background</span></a>
+<a class="sourceLine" id="cb28-10" data-line-number="10">pixels_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-11" data-line-number="11"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-12" data-line-number="12"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(x, y), <span class="dt">fill=</span><span class="st">&quot;#181818&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-13" data-line-number="13"><span class="st">  </span><span class="kw">scale_y_reverse</span>(<span class="dt">limits=</span><span class="kw">c</span>(image_height<span class="op">+</span><span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-14" data-line-number="14"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-15" data-line-number="15"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span>image_height<span class="op">/</span>image_width,</a>
+<a class="sourceLine" id="cb28-16" data-line-number="16">        <span class="dt">panel.background =</span> </a>
+<a class="sourceLine" id="cb28-17" data-line-number="17">          <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;#D3D3D3&quot;</span>))</a></code></pre></div>
+<p><img src="code_files/figure-html/pixelated-animation-2.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co"># now we want to create another version of the plot </span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co"># where the co-ordinates are random</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">pixels_df_rand &lt;-<span class="st"> </span>pixels_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">phase =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">         <span class="dt">x =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="kw">n</span>(), <span class="dt">min =</span> <span class="dv">1</span>, <span class="dt">max =</span> image_width)),</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">         <span class="dt">y =</span> <span class="kw">round</span>(<span class="kw">runif</span>(<span class="kw">n</span>(), <span class="dt">min =</span> <span class="dv">1</span>, <span class="dt">max =</span> image_height)))</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">pixels_df_true &lt;-<span class="st"> </span>pixels_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">phase =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="co"># combine them together </span></a>
+<a class="sourceLine" id="cb29-12" data-line-number="12">pixels_df_anim &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(pixels_df_rand, pixels_df_true)</a>
+<a class="sourceLine" id="cb29-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb29-14" data-line-number="14"><span class="co"># and animate by phase!</span></a>
+<a class="sourceLine" id="cb29-15" data-line-number="15">pixels_df_anim <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-16" data-line-number="16"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-17" data-line-number="17"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(x, y), </a>
+<a class="sourceLine" id="cb29-18" data-line-number="18">            <span class="dt">fill=</span><span class="st">&quot;#181818&quot;</span>, </a>
+<a class="sourceLine" id="cb29-19" data-line-number="19">            <span class="dt">width =</span> pixel_size, </a>
+<a class="sourceLine" id="cb29-20" data-line-number="20">            <span class="dt">height =</span> pixel_size) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-21" data-line-number="21"><span class="st">  </span><span class="kw">scale_y_reverse</span>(<span class="dt">limits=</span><span class="kw">c</span>(image_height<span class="op">+</span><span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-22" data-line-number="22"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-23" data-line-number="23"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span>image_height<span class="op">/</span>image_width,</a>
+<a class="sourceLine" id="cb29-24" data-line-number="24">        <span class="dt">panel.background =</span> </a>
+<a class="sourceLine" id="cb29-25" data-line-number="25">          <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;#D3D3D3&quot;</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-26" data-line-number="26"><span class="st">  </span><span class="kw">transition_states</span>(phase, </a>
+<a class="sourceLine" id="cb29-27" data-line-number="27">                    <span class="dt">transition_length =</span> <span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb29-28" data-line-number="28">                    <span class="dt">state_length =</span> <span class="dv">1</span>)  <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-29" data-line-number="29"><span class="st">  </span><span class="kw">ease_aes</span>(<span class="st">&#39;sine-in-out&#39;</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/pixelated-animation-1.gif" /><!-- --></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co"># anim_save(&quot;pixelated_animation.gif&quot;)</span></a></code></pre></div>
+</div>
+<div id="la-piece-de-resistance" class="section level3">
+<h3>la pièce de résistance</h3>
+<p>Lastly, let’s add a non-conventional use of the R package <code>nullabor</code> to create some sparkling lights for an Eiffel Tower mosaic made from <a href="https://unsplash.com/">Unsplash photos</a> of Paris.</p>
+<p>You can download the images used <a href="https://statistics-is-awesome.org/paris.zip">from here</a>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="co"># for funtimes with images</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="kw">library</span>(magick)</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="kw">library</span>(ggimage)</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="kw">library</span>(nullabor)</a>
+<a class="sourceLine" id="cb31-6" data-line-number="6"><span class="kw">library</span>(gganimate)</a>
+<a class="sourceLine" id="cb31-7" data-line-number="7"><span class="kw">set.seed</span>(<span class="dv">210</span>)</a>
+<a class="sourceLine" id="cb31-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb31-9" data-line-number="9"><span class="co"># apologies for this to be refactored code!</span></a>
+<a class="sourceLine" id="cb31-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb31-11" data-line-number="11"><span class="co"># set num photos via grid</span></a>
+<a class="sourceLine" id="cb31-12" data-line-number="12">ncols &lt;-<span class="st"> </span><span class="dv">17</span></a>
+<a class="sourceLine" id="cb31-13" data-line-number="13">sample_size &lt;-<span class="st"> </span>ncols<span class="op">*</span>ncols</a>
+<a class="sourceLine" id="cb31-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb31-15" data-line-number="15">edited &lt;-<span class="st"> &quot;paris/&quot;</span></a>
+<a class="sourceLine" id="cb31-16" data-line-number="16">edited_pics &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">imgLoc =</span> <span class="kw">list.files</span>(<span class="dt">path=</span>edited),<span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb31-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb31-18" data-line-number="18">colours &lt;-<span class="st"> </span><span class="kw">map_df</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(edited_pics), <span class="cf">function</span>(i) {</a>
+<a class="sourceLine" id="cb31-19" data-line-number="19">  picster &lt;-<span class="st"> </span><span class="kw">image_read</span>(<span class="kw">paste0</span>(edited,edited_pics<span class="op">$</span>imgLoc[i])) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-20" data-line-number="20"><span class="st">    </span><span class="kw">image_quantize</span>(<span class="dt">max=</span><span class="dv">1</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-21" data-line-number="21"><span class="st">    </span><span class="kw">image_data</span>()</a>
+<a class="sourceLine" id="cb31-22" data-line-number="22">  components &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(picster[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb31-23" data-line-number="23">  r &lt;-<span class="st"> </span>components[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb31-24" data-line-number="24">  g &lt;-<span class="st"> </span>components[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb31-25" data-line-number="25">  b &lt;-<span class="st"> </span>components[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb31-26" data-line-number="26">  hex &lt;-<span class="st"> </span><span class="kw">rgb</span>(r<span class="op">/</span><span class="dv">255</span>, g<span class="op">/</span><span class="dv">255</span>, b<span class="op">/</span><span class="dv">255</span>)</a>
+<a class="sourceLine" id="cb31-27" data-line-number="27">  hsl &lt;-<span class="kw">rgb2hsv</span>(<span class="dt">r =</span> r, <span class="dt">g =</span> g, <span class="dt">b =</span> b, <span class="dt">maxColorValue =</span> <span class="dv">255</span>)</a>
+<a class="sourceLine" id="cb31-28" data-line-number="28">  gs &lt;-<span class="st"> </span><span class="kw">round</span>((r <span class="op">+</span><span class="st"> </span>g <span class="op">+</span><span class="st"> </span>b)<span class="op">/</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb31-29" data-line-number="29">  <span class="kw">data.frame</span>(<span class="dt">r =</span> r, <span class="dt">g =</span> g, <span class="dt">b =</span> b, <span class="dt">gs =</span> gs, <span class="dt">hue =</span> hsl[<span class="dv">1</span>], <span class="dt">sat =</span> hsl[<span class="dv">2</span>], <span class="dt">light =</span> hsl[<span class="dv">3</span>], <span class="dt">x=</span>((i<span class="dv">-1</span>)<span class="op">%%</span>ncols)<span class="op">+</span><span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb31-30" data-line-number="30">             <span class="dt">y=</span><span class="kw">ceiling</span>(i<span class="op">/</span>ncols), <span class="dt">hex=</span>hex, <span class="dt">imageLoc=</span><span class="kw">paste0</span>(edited,edited_pics<span class="op">$</span>imgLoc[i]), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb31-31" data-line-number="31">})</a>
+<a class="sourceLine" id="cb31-32" data-line-number="32"></a>
+<a class="sourceLine" id="cb31-33" data-line-number="33">tower &lt;-<span class="st"> </span><span class="kw">image_read</span>(<span class="st">&quot;tower_2.png&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-34" data-line-number="34"><span class="st">  </span><span class="kw">image_scale</span>(<span class="kw">paste0</span>(ncols,<span class="st">&quot;x&quot;</span>,ncols)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-35" data-line-number="35"><span class="st">  </span><span class="kw">image_convert</span>(<span class="dt">type=</span><span class="st">&quot;bilevel&quot;</span>)</a>
+<a class="sourceLine" id="cb31-36" data-line-number="36"></a>
+<a class="sourceLine" id="cb31-37" data-line-number="37">hex_data &lt;-<span class="st"> </span><span class="kw">image_data</span>(tower)</a>
+<a class="sourceLine" id="cb31-38" data-line-number="38"></a>
+<a class="sourceLine" id="cb31-39" data-line-number="39">hex_colour &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;#&quot;</span>,hex_data[<span class="dv">1</span>,,][<span class="dv">1</span><span class="op">:</span>ncols,<span class="dv">1</span><span class="op">:</span>ncols],</a>
+<a class="sourceLine" id="cb31-40" data-line-number="40">                     hex_data[<span class="dv">2</span>,,][<span class="dv">1</span><span class="op">:</span>ncols,<span class="dv">1</span><span class="op">:</span>ncols],</a>
+<a class="sourceLine" id="cb31-41" data-line-number="41">                     hex_data[<span class="dv">3</span>,,][<span class="dv">1</span><span class="op">:</span>ncols,<span class="dv">1</span><span class="op">:</span>ncols])</a>
+<a class="sourceLine" id="cb31-42" data-line-number="42"></a>
+<a class="sourceLine" id="cb31-43" data-line-number="43">pixelsdf &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">hex =</span> hex_colour) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-44" data-line-number="44"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">x =</span> (<span class="kw">row_number</span>() <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">%%</span>ncols <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">y =</span> <span class="kw">ceiling</span>(<span class="kw">row_number</span>()<span class="op">/</span>ncols)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-45" data-line-number="45"><span class="st">  </span><span class="kw">arrange</span>(hex) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-46" data-line-number="46"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id=</span><span class="kw">row_number</span>())</a>
+<a class="sourceLine" id="cb31-47" data-line-number="47"></a>
+<a class="sourceLine" id="cb31-48" data-line-number="48"><span class="co"># how many black</span></a>
+<a class="sourceLine" id="cb31-49" data-line-number="49">pixelsdfblack &lt;-<span class="st"> </span>pixelsdf <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-50" data-line-number="50"><span class="st">  </span><span class="kw">filter</span>(hex<span class="op">==</span><span class="st">&quot;#000000&quot;</span>)</a>
+<a class="sourceLine" id="cb31-51" data-line-number="51"></a>
+<a class="sourceLine" id="cb31-52" data-line-number="52">darkpixels &lt;-<span class="st"> </span>colours <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-53" data-line-number="53"><span class="st">  </span><span class="kw">arrange</span>(light) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-54" data-line-number="54"><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(pixelsdfblack))</a>
+<a class="sourceLine" id="cb31-55" data-line-number="55"></a>
+<a class="sourceLine" id="cb31-56" data-line-number="56">lightpixels &lt;-<span class="st"> </span>colours <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-57" data-line-number="57"><span class="st">  </span><span class="kw">arrange</span>(light) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-58" data-line-number="58"><span class="st">  </span><span class="kw">slice</span>((<span class="kw">nrow</span>(pixelsdfblack)<span class="op">+</span><span class="dv">1</span>)<span class="op">:</span><span class="kw">nrow</span>(.)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-59" data-line-number="59"><span class="st">  </span><span class="kw">sample_n</span>(sample_size <span class="op">-</span><span class="st"> </span><span class="kw">nrow</span>(pixelsdfblack)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-60" data-line-number="60"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(hue))</a>
+<a class="sourceLine" id="cb31-61" data-line-number="61"></a>
+<a class="sourceLine" id="cb31-62" data-line-number="62">ref_colours &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(darkpixels,lightpixels) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-63" data-line-number="63"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id=</span><span class="kw">row_number</span>())</a>
+<a class="sourceLine" id="cb31-64" data-line-number="64"></a>
+<a class="sourceLine" id="cb31-65" data-line-number="65">pixels &lt;-<span class="st"> </span>pixelsdf <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-66" data-line-number="66"><span class="st">  </span><span class="kw">left_join</span>(ref_colours, <span class="dt">by=</span><span class="st">&quot;id&quot;</span>)</a>
+<a class="sourceLine" id="cb31-67" data-line-number="67"></a>
+<a class="sourceLine" id="cb31-68" data-line-number="68">pixels_tower &lt;-<span class="st"> </span>pixels <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-69" data-line-number="69"><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(pixelsdfblack))</a>
+<a class="sourceLine" id="cb31-70" data-line-number="70"></a>
+<a class="sourceLine" id="cb31-71" data-line-number="71">pixels_background &lt;-<span class="st"> </span>pixels <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-72" data-line-number="72"><span class="st">  </span><span class="kw">slice</span>((<span class="kw">nrow</span>(pixelsdfblack)<span class="op">+</span><span class="dv">1</span>)<span class="op">:</span>sample_size)</a>
+<a class="sourceLine" id="cb31-73" data-line-number="73"></a>
+<a class="sourceLine" id="cb31-74" data-line-number="74"><span class="kw">ggplot</span>(<span class="dt">data =</span> pixels) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-75" data-line-number="75"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(x.x,y.x, <span class="dt">fill=</span>hex.y)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-76" data-line-number="76"><span class="st">  </span><span class="kw">scale_fill_identity</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-77" data-line-number="77"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, ncols<span class="op">+</span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-78" data-line-number="78"><span class="st">  </span><span class="kw">scale_y_reverse</span>(<span class="dt">limits=</span><span class="kw">c</span>(ncols<span class="op">+</span><span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-79" data-line-number="79"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-80" data-line-number="80"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/je-taime-paris-1.png" width="672" /></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">##ggsave(&quot;eiffel_tile.png&quot;)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="co"># now with the actual images!!!</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="co"># resize first!!</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_image</span>(<span class="dt">data=</span>pixels, <span class="kw">aes</span>(x.x, y.x, <span class="dt">image=</span>imageLoc), </a>
+<a class="sourceLine" id="cb32-7" data-line-number="7">             <span class="dt">size=</span><span class="dv">1</span><span class="op">/</span>(<span class="fl">1.1</span><span class="op">*</span>ncols)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="dt">data =</span> pixels, <span class="kw">aes</span>(x.x,y.x, <span class="dt">fill=</span>hex.y), <span class="dt">alpha=</span><span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"><span class="st">  </span><span class="kw">scale_fill_identity</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, ncols<span class="op">+</span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_y_reverse</span>(<span class="dt">limits=</span><span class="kw">c</span>(ncols<span class="op">+</span><span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-12" data-line-number="12"><span class="st">  </span><span class="kw">theme_void</span>()  <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-13" data-line-number="13"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/je-taime-paris-2.png" width="672" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">##ggsave(&quot;eiffel_love.png&quot;)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co"># now with some animation</span></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">pixels_fun &lt;-<span class="st"> </span><span class="kw">lineup</span>(<span class="kw">null_permute</span>(<span class="st">&quot;hex.y&quot;</span>), pixels)</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_image</span>(<span class="dt">data=</span>pixels_fun, <span class="kw">aes</span>(x.x, y.x, <span class="dt">image=</span>imageLoc), </a>
+<a class="sourceLine" id="cb33-8" data-line-number="8">             <span class="dt">size=</span><span class="dv">1</span><span class="op">/</span>(<span class="fl">1.1</span><span class="op">*</span>ncols)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="dt">data =</span> pixels_fun, <span class="kw">aes</span>(x.x,y.x, <span class="dt">fill=</span>hex.y), <span class="dt">alpha=</span><span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_fill_identity</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, ncols<span class="op">+</span><span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-12" data-line-number="12"><span class="st">  </span><span class="kw">scale_y_reverse</span>(<span class="dt">limits=</span><span class="kw">c</span>(ncols<span class="op">+</span><span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-13" data-line-number="13"><span class="st">  </span><span class="kw">theme_void</span>()  <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-14" data-line-number="14"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">aspect.ratio=</span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-15" data-line-number="15"><span class="st">  </span><span class="kw">transition_states</span>(.sample, </a>
+<a class="sourceLine" id="cb33-16" data-line-number="16">                    <span class="dt">transition_length =</span> <span class="dv">0</span>, </a>
+<a class="sourceLine" id="cb33-17" data-line-number="17">                    <span class="dt">state_length =</span> <span class="fl">0.5</span>)  <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-18" data-line-number="18"><span class="st">  </span><span class="kw">ease_aes</span>(<span class="st">&#39;sine-in-out&#39;</span>)</a></code></pre></div>
+<p><img src="code_files/figure-html/je-taime-paris-1.gif" /><!-- --></p>
+</div>
+</div>
+
+<hr />
+Website and workshop materials developed by Anna Fergusson for the <a href="https://www.meetup.com/rladies-auckland/events/255112995/">R-Ladies Auckland October 2018 Meetup</a>.
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
