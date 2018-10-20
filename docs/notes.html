@@ -11,7 +11,7 @@
 
 
 
-<title>Useful links</title>
+<title>Workshop notes</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -204,53 +204,26 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Useful links</h1>
+<h1 class="title toc-ignore">Workshop notes</h1>
 
 </div>
 
 
-<p>I’ll try my best to summarise the reference material, ideas, articles, tweets or blog posts that inspired aspects of this workshop, and provide links to other things I’ve read/seen that I thought were interesting/related (and make a note to myself to do this AS I prepare the workshop next time!). Here it goes:</p>
-<div class="panel panel-default">
-<div class="panel-body">
-The very super helpful <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html"><code>magick</code> vignette</a> from <a href="https://twitter.com/opencpu">Jeroen Ooms <code>@opencpu</code></a> and <a href="https://twitter.com/rOpenSci"><code>@rOpenSci</code></a> that I don’t even know how many times I’ve viewed!
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-All of the giftastic <code>gganimate</code> examples shared by <a href="https://twitter.com/djnavarro">Danielle Navarro <code>@djnavarro</code></a>. I ended up using a different approach to plot the pixels for words but learned heaps <a href="https://github.com/djnavarro/chdss-logo">from her examples</a>.
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-The awesome examples <a href="https://twitter.com/thomasp85">Thomas Lin Pedersen <code>@thomasp85</code></a> has provided for the <a href="https://github.com/thomasp85/gganimate/wiki"><code>gganimate</code> package</a>.<br />
-
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-I didn’t end up covering how to plot the Google drawings in the workshop (we just used “some I had prepared earlier”), but still learned some cool stuff from code written by <a href="https://github.com/aschinchon/quickdraw-R-mona-lisa/blob/master/mona_lisa.R">Antonio Sánchez Chinchón <code>@aschinchon</code></a>.
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-Lots of seeds of ideas from <a href="https://twitter.com/ma_salmon">Maëlle Salmon’s <code>@ma_salmon</code></a> very cool <a href="https://masalmon.eu/">blog</a> - I love how she writes her posts and my students love them too!
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-<p>We didn’t go beyond using k-means clustering with the Google Quick! Draw! ducks, but <a href="https://medium.com/@enjalot/machine-learning-for-visualization-927a9dff1cab">these talk notes from Ian Johnson <code>@enjalot</code></a> are amazing and link to other awesome pages/posts related to the Google Quick! Draw! dataset.</p>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-<p>This is also very cool project about <a href="http://truth-and-beauty.net/projects/multiplicity">how Paris looks as seen through the lens of thousands of photographers</a>.</p>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-<p>Looking for something to try out yourself? Why not download the <a href="https://statistics-is-awesome.org/computers.zip">Computer drawings ZIP</a> and explore whether people draw desktop computers or laptops!</p>
-</div>
-</div>
+<p>This <a href="https://rladies.org/">R-Ladies</a> talk/workshop featured some totally non-serious use of <a href="https://www.r-project.org/">R</a> via <a href="https://www.rstudio.com/">RStudio</a> to work with images 📷 and answer such questions as “If it (random) walks like a duck 🦆, which side does it quack on?”. I was hoping that participants would have a fun couple of hours learning programming within an awesomely supportive environment. Here are the slides I used for the workshop, with some brief notes about the workshop below.</p>
+<iframe id="slides" src="https://docs.google.com/presentation/d/e/2PACX-1vRn4G6v4w3HuKT43G1DlFkE9b1hRgz_sWGq3zrb7cte5MIEljRtFEl03wCdvRCXySQUI3EwZUmjd-cG/embed?start=false&amp;loop=false" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="margin-bottom:10px">
+</iframe>
+<p>The first activity I planned for the workshop involved these five cute cats..</p>
+<p><img src="notes_files/figure-html/finding-cats-1.png" width="500" /></p>
+<p>… and different representations of data about each of their images.</p>
+<iframe src="https://drive.google.com/file/d/15dv0BTo8lUhWZnhTb6N46Iot4OrexDKU/preview" width="640" height="480">
+</iframe>
+<p>Workshopees worked together in groups to sort the 40 cards into five groups of eight. Next time, I think I would give each person one card and get them to walk around and find their fellow cats (data)!</p>
+<p>The idea was to get people thinking about how image data can be structured before working with image data via R. Below are the kinds of links I hoped people would make:</p>
+<p><img src="connections.png" /></p>
+<p>I used the slides above to talk through some image data know how, and then live coded how to use R and the package <code>magick</code> to create each of the cards used (see <a href="code.html">code - getting images into R</a>). The plan was that after my demo, people would try out the functions etc. with the five cat images and so “self-mark” their matching attempts but I actually TOTALLY forgot to get people to do this. For the rest of the workshop, we worked through the <a href="code.html">code examples</a>, with fun extras like drawing our own robots to use as points on plots…</p>
+<p><img src="robotdance.gif" /></p>
+<p>or exploring <em>cluster ducks!</em>….</p>
+<p><img src="ducks.gif" /></p>
 
 <hr />
 Website and workshop materials developed by Anna Fergusson for the <a href="https://www.meetup.com/rladies-auckland/events/255112995/">R-Ladies Auckland October 2018 Meetup</a>.

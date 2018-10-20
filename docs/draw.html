@@ -21,6 +21,15 @@
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-65065542-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65065542-1');
+</script>
 
 
 
@@ -172,16 +181,19 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
+  <a href="notes.html">Notes</a>
+</li>
+<li>
   <a href="live.html">Live code</a>
 </li>
 <li>
-  <a href="draw.html">Drawing tool</a>
+  <a href="draw.html">Draw</a>
 </li>
 <li>
-  <a href="code.html">Code examples</a>
+  <a href="code.html">Code</a>
 </li>
 <li>
-  <a href="links.html">Useful links</a>
+  <a href="links.html">Links</a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -198,11 +210,33 @@ $(document).ready(function () {
 
 
 <p>What will I ask you to draw?</p>
-<iframe id="drawing" src="https://script.google.com/macros/s/AKfycbxwMcXx-_A-cm93ETnsu2BppU89bOgbaiZ6MvHl-7Tp7Bqp9R6v/exec" frameborder="0" width="500" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" inhr>
+<iframe id="drawing" src="https://script.google.com/macros/s/AKfycbxwMcXx-_A-cm93ETnsu2BppU89bOgbaiZ6MvHl-7Tp7Bqp9R6v/exec" frameborder="0" width="500" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
 </iframe>
 
 <hr />
 Website and workshop materials developed by Anna Fergusson for the <a href="https://www.meetup.com/rladies-auckland/events/255112995/">R-Ladies Auckland October 2018 Meetup</a>.
+
+<script>
+  $(document).ready(function () {
+    
+ //960:569 ratio for Google slides
+ var screen_size = getScreenSize();
+ document.getElementById("slides").width = screen_size.screenWidth*0.8;
+ document.getElementById("slides").height = screen_size.screenWidth*0.8*569/960;
+ 
+});
+
+//collect the screen size of the device (from https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window)
+function getScreenSize() {
+var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    screenWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+    screenHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    return {screenWidth: screenWidth, screenHeight: screenHeight};
+} 
+</script>
 
 
 
